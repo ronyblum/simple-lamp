@@ -18,7 +18,7 @@ $ cd /var/www/html
 $ git clone https://github.com/qyjohn/simple-lamp
 ~~~~
 
-Then we create a MySQL database and a MySQL user for our demo. Here we use “web_demo” as the database name, and “username” as the MySQL user.
+Then we create a MySQL database and a MySQL user for our demo. Here we use “simple_lamp” as the database name, and “username” as the MySQL user.
 
 ~~~~
 $ mysql -u root -p
