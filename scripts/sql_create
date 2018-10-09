@@ -1,0 +1,2 @@
+#!/bin/bash
+mysql -u rony -pPassword1! < /tmp/scripts/db_create.sql

@@ -1,0 +1,30 @@
+version: 0.0
+os: linux
+files:
+        - source: index.php
+          destination: /var/www/html
+        - source: scripts
+          destination: /tmp/scripts 
+        - source: uploads
+          destination: /var/www/html/uploads
+        - source: demo.js
+          destination: /var/www/html
+        - source: config.php
+          destination: /var/www/html  
+
+hooks:
+        AfterInstall: 
+                - location: scripts/sql_create
+                  timeout: 300
+                  runas: root
+                - location: scripts/db_data
+                  timeout: 300
+                  runas: root
+        ApplicationStop:
+                - location: scripts/stop_server
+                  timeout: 300
+                  runas: root
+        ApplicationStart:
+                - location: scripts/start_server
+                  timeout: 300
+                  runas: root
